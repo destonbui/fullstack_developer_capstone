@@ -1,33 +1,36 @@
-const { Int32 } = require('mongodb');
-const mongoose = require('mongoose');
+/* jshint esversion: 6 */
 
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// If you need to use Int32 for a field, for example, dealer_id
+// const { Int32 } = require('mongodb');
+
 const cars = new Schema({
-dealer_id: {
-    type: Number,
-    required: true
-},
-make: {
+  dealer_id: {
+    type: Number, // Or you can use Int32 if needed: type: Int32
+    required: true,
+  },
+  make: {
     type: String,
-    required: true
+    required: true,
   },
-model: {
+  model: {
     type: String,
-    required: true
+    required: true,
   },
-bodyType: {
+  bodyType: {
     type: String,
-    required: true
+    required: true,
   },
-year: {
+  year: {
     type: Number,
-    required: true
+    required: true,
   },
-mileage: {
+  mileage: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('cars', cars);
+module.exports = mongoose.model("cars", cars);
